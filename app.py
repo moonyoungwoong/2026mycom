@@ -28,7 +28,7 @@ ui.inject_css()
 
 # 로그인 전/후에 접근할 수 있는 페이지
 GUEST_PAGES = {"landing": landing, "register": register, "login": login}
-MEMBER_PAGES = {"home": home, "survey": survey, "profile": profile}
+MEMBER_PAGES = {"home": home, "survey": survey, "profile": profile, "pythonide": pythonide}
 
 # 접근 권한 확인: 로그인 안 했으면 회원 페이지 X, 로그인 했으면 가입/로그인 페이지 X
 if auth.is_logged_in():
