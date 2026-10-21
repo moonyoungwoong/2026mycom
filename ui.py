@@ -204,6 +204,9 @@ def render_sidebar() -> None:
             _menu_button("🏠  처음 화면", "landing", "m_landing")
             _menu_button("📝  사용자 등록", "register", "m_register")
             _menu_button("🔐  로그인", "login", "m_login")
+            _menu_button("🔐  파이썬IDE", "login", "m_login")
+            
+
 
 
 # ------------------------------------------------------------------ 로그인 전 랜딩
