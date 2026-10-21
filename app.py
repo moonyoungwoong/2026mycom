@@ -9,7 +9,6 @@ app.py - Streamlit 웹앱 실행 파일
  4) 로그인 전/후에 따라 서로 다른 페이지를 보여줌
 """
 import streamlit as st
-import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="MyProject",
@@ -21,7 +20,7 @@ st.set_page_config(
 import auth  # noqa: E402
 import db    # noqa: E402
 import ui    # noqa: E402
-from views import home, landing, login, profile, register, survey  # noqa: E402
+from views import home, landing, login, profile, register, survey, pythonide  # noqa: E402
 
 db.init_db()
 auth.init_session()
@@ -51,8 +50,5 @@ if flash:
     st.toast(msg, icon="✅" if kind == "success" else "ℹ️")
     getattr(st, kind)(msg)
 
-components.html(
-    '<iframe style="border:1px #FFFFFF none" src="https://www.online-python.com/" title="iFrame" width="100%" height="600px" scrolling="no" frameborder="no" allow="fullscreen"></iframe>'
-)
 
 pages[st.session_state.page].render()
