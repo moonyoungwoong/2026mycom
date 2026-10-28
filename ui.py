@@ -198,6 +198,8 @@ def render_sidebar() -> None:
             _menu_button("📋  설문 참여", "survey", "m_survey")
             _menu_button("👤  내 정보", "profile", "m_profile")
             _menu_button("🔐  파이썬IDE", "pythonide", "m_pythonide")
+            _menu_button("🔐  블록리게임", "blockly", "m_blockly")
+            _menu_button("🔐  테트리스", "tetris", "m_tetris")
             st.divider()
             st.button("🚪  로그아웃", key="m_logout", on_click=auth.logout, width="stretch")
         else:
@@ -205,9 +207,6 @@ def render_sidebar() -> None:
             _menu_button("🏠  처음 화면", "landing", "m_landing")
             _menu_button("📝  사용자 등록", "register", "m_register")
             _menu_button("🔐  로그인", "login", "m_login")
-
-            
-
 
 
 # ------------------------------------------------------------------ 로그인 전 랜딩
