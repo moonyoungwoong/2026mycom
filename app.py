@@ -20,7 +20,7 @@ st.set_page_config(
 import auth  # noqa: E402
 import db    # noqa: E402
 import ui    # noqa: E402
-from views import home, landing, login, profile, register, survey, pythonide  # noqa: E402
+from views import home, landing, login, profile, register, survey  # noqa: E402
 
 db.init_db()
 auth.init_session()
@@ -28,7 +28,7 @@ ui.inject_css()
 
 # 로그인 전/후에 접근할 수 있는 페이지
 GUEST_PAGES = {"landing": landing, "register": register, "login": login}
-MEMBER_PAGES = {"home": home, "survey": survey, "profile": profile, "pythonide": pythonide}
+MEMBER_PAGES = {"home": home, "survey": survey, "profile": profile}
 
 # 접근 권한 확인: 로그인 안 했으면 회원 페이지 X, 로그인 했으면 가입/로그인 페이지 X
 if auth.is_logged_in():
@@ -49,6 +49,5 @@ if flash:
     kind, msg = flash
     st.toast(msg, icon="✅" if kind == "success" else "ℹ️")
     getattr(st, kind)(msg)
-
 
 pages[st.session_state.page].render()
